@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <>
-      <header className="bg-success">
+      <header>
         <div id="site_title" className="mx-5 d-flex flex-column justify-content-center">
           <h1 className="p-0 m-0">LeoLeo's cooking blog</h1>
           <p className="text-secondary-subtle fst-italic ps-5 m-0">- a window to my disatrous kitchen endeavors</p>
@@ -41,22 +41,34 @@ export default function App() {
       </header >
 
       <main className="m-5">
-        <h3 className="my-4">Here's my most successful recipes :3</h3>
+        <h2 className="my-5 d-flex justify-content-center align-items-center">
+          A
+          <div className="d-flex flex-column justify-content-center align-items-center">
+
+            <i class="bi bi-arrow-down text_highlight"></i>
+            <span className="fs-6 mx-2">short</span>
+            <i class="bi bi-arrow-up text_highlight"></i>
+
+          </div>
+          list of my
+          <span className="text_highlight mx-2">most successful</span>
+          recipes :3
+        </h2>
 
         <div className="card-container">
-          {todos.map((post) => (
-            <div key={post.id} className="card mb-3 bg-dark text-light" style={{ maxWidth: "100%" }}>
-              <div className="row g-0">
-                <div className="col-md-4">
+          {todos.map((post, index) => (
+            <div key={post.id} className="card mb-5 text-light border-2" style={{ maxWidth: "100%", backgroundColor: "#27391C", borderColor: "#255F38" }}>
+              <div className={`row g-0 ${index % 2 === 0 ? "" : "flex-row-reverse"}`}>
+                <div className="col-3">
                   <img src={post.image} alt={post.title} className="img-fluid rounded-start" />
                 </div>
-                <div className="col-md-8">
+                <div className="col-9">
                   <div className="card-body">
-                    <h5 className="card-title text-white">{post.title}</h5>
-                    <p className="card-text">{post.content}</p>
-                    <div className="card-tags">
+                    <h4 className={`card-title text-white ${index % 2 === 0 ? "" : "text-end me-3"}`}>{post.title}</h4>
+                    <p className={`card-text fs-5 ${index % 2 === 0 ? "" : "text-end"}`}>{post.content}</p>
+                    <div className={`card-tags ${index % 2 === 0 ? "" : "text-end"}`}>
                       {post.tags.map((tag, index) => (
-                        <span key={index} className="badge bg-secondary me-1">
+                        <span key={index} className="badge me-1 ">
                           {tag}
                         </span>
                       ))}
@@ -68,9 +80,9 @@ export default function App() {
           ))}
         </div>
 
-      </main>
+      </main >
 
-      <footer className="bg-dark text-light py-3">
+      <footer className="text-light py-3" style={{ backgroundColor: "#27391C" }}>
         <div className="container text-center">
           <p className="m-0">© {new Date().getFullYear()} LeoLeo's cooking blog&tm; All rights reserved.</p>
         </div>
