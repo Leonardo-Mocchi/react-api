@@ -1,12 +1,7 @@
 @import "bootstrap";
 @import "bootstrap-icons";
 
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
+/* #region header */
 header {
     background-color: #255F38;
     z-index: 0;
@@ -18,10 +13,7 @@ header {
     }
 }
 
-#site_title {
-    z-index: 100;
-}
-
+/* #region svgs adaptations */
 #header_complexity_1 {
     position: absolute;
     right: 12%;
@@ -46,6 +38,8 @@ header {
     z-index: 2;
 }
 
+/* #endregion svgs adaptations */
+
 .nav-link {
     color: white;
     text-decoration: none;
@@ -65,6 +59,9 @@ header {
     font-weight: bold;
 }
 
+/* #endregion header */
+
+/* #region cards */
 .card-container {
     margin: 0 3%;
     display: flex;
@@ -77,8 +74,8 @@ header {
 
 }
 
-/* 
-.card-text {
+/* optional, applies text */
+/* .card-text {
     max-height: 6rem;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -98,3 +95,5 @@ header {
 .text_highlight {
     color: #1F7D53;
 }
+
+/* #endregion cards */
