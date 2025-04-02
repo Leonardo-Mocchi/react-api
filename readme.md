@@ -1,1 +1,1 @@
-*Site is not responsive, made only for 1080p*
+# Site is not responsive, made only for 1080p
